@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "821821131497",
+    "project_id": "hahter-1",
+    "storage_bucket": "hahter-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821821131497:android:22b4257a56c46f7dde3e78",
+        "android_client_info": {
+          "package_name": "com.example.hather"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8hzuf9hi3wsZ-vZwRguNwQHYX_pmnGBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
