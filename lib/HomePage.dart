@@ -17,10 +17,16 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
+  HomePageState getState() {
+    return HomePageState();
+  }
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
+   static const Key _homePageStateKey = Key('_HomePageStateKey');
+  static Key get homePageStateKey => _homePageStateKey;
+  
   static const String LISTEN_MSG = 'Listening to sms...'; //access
   static const String NEW_MSG = 'Captured new message!'; //access
   String _status = LISTEN_MSG; //access
@@ -128,8 +134,7 @@ class _HomePageState extends State<HomePage> {
 
     try {
       // Send a POST request to the Python server with the captured message body as input
-      final response = await _client.post(
-          Uri.parse("http://"":13000/modelpredict?input=$input"));//////////change the ip 
+      final response = await _client.post(Uri.parse("http://127.0.0.1:13000/modelpredict?input=$input")); //////////change the ip 
 
       print('My input is ++++ $input');
 

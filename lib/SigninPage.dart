@@ -23,11 +23,11 @@ class _SigninPageState extends State {
   String errorMessage = '';
 
   @override
-
   void dispose() {
     _phoneNumberController.dispose();
     super.dispose();
   }
+
 //making sure the phone is valid
   void _validatePhoneNumber(String phoneNumber) {
     if (phoneNumber.length == 13 &&
@@ -60,10 +60,10 @@ class _SigninPageState extends State {
   Future<void> signInWithPhoneAndPassword(
       String phoneNumber, String password) async {
     try {
-      // Validate phone number and password 
+      // Validate phone number and password
       if (isPhoneNumberValid && isPasswordValid) {
         final adminQuery = await FirebaseFirestore.instance
-        //check if it is an admin (the admin has special password and phone number)
+            //check if it is an admin (the admin has special password and phone number)
             .collection('Admin')
             .where('AdminPhone', isEqualTo: phoneNumber)
             .where('AdminPassword', isEqualTo: password)
@@ -78,7 +78,8 @@ class _SigninPageState extends State {
                   RequestsPageAdmin(), // Navigate to the admin page
             ),
           );
-        } else { //of not admin, check the user collection 
+        } else {
+          //of not admin, check the user collection
           final userQuery = await FirebaseFirestore.instance
               .collection('User')
               .where('PhoneNumber', isEqualTo: phoneNumber)
@@ -87,9 +88,8 @@ class _SigninPageState extends State {
           if (userQuery.docs.isNotEmpty) {
             final userData = userQuery.docs[0].data() as Map<String, dynamic>;
             final storedPassword = userData['Password'];
-             //check the entered password = storedPassword 
+            //check the entered password = storedPassword
             if (storedPassword == password) {
-              
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -243,7 +243,7 @@ class _SigninPageState extends State {
                     ),
                   ),
 
-                //password number field 
+                //password number field
                 Padding(
                   padding: const EdgeInsets.only(
                     right: 55.0,
@@ -311,26 +311,21 @@ class _SigninPageState extends State {
                     ),
                   ),
 
-
-
-
-
                 if (errorMessage.isNotEmpty)
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 13.0, right: 60.0),
-                  child: Text(
-                    errorMessage,                    
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontFamily: 'IBMPlexSansArabic',
-                      fontSize: 20.0,
+                      child: Text(
+                        errorMessage,
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontFamily: 'IBMPlexSansArabic',
+                          fontSize: 20.0,
+                        ),
+                      ),
                     ),
                   ),
-                    ),
-                  ),
-
 
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
@@ -381,7 +376,7 @@ class _SigninPageState extends State {
                           fontFamily: 'IBMPlexSansArabic',
                           fontWeight: FontWeight.w600,
                         ),
-                      ),//
+                      ), //
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.topCenter,
@@ -401,7 +396,7 @@ class _SigninPageState extends State {
                   ),
                 ),
 
-                // Divider with "أو" 
+                // Divider with "أو"
                 Padding(
                   padding: const EdgeInsets.only(
                       right: 50.0, left: 50.0, top: 60.0, bottom: 40.0),

@@ -83,38 +83,44 @@ class _OTP_PageState extends State<ReSetOTP> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 40.0, top: 20.0),
-                    child: Text(
-                      'قم بإدخال رمز التحقق المكون من 6 ارقام ',
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.normal,
-                        color: Color(0xff262262),
-                        fontFamily: 'IBMPlexSansArabic',
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40.0, top: 20.0),
+                      child: Text(
+                        'قم بإدخال رمز التحقق المكون من 6 ارقام ',
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xff262262),
+                          fontFamily: 'IBMPlexSansArabic',
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
               // OTP entering boxes 
               Padding(
                 padding: const EdgeInsets.only(
                     top: 65.0, bottom: 65.0, right: 30.0, left: 30.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    buildOTPBox(1),// bulidOTPBox it is  a widgit that contain the boxes design 
-                    buildOTPBox(2),// and how it move from box to another in typing 
-                    buildOTPBox(3),
-                    buildOTPBox(4),
-                    buildOTPBox(5),
-                    buildOTPBox(6),
-                  ],
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      buildOTPBox(1),// bulidOTPBox it is  a widgit that contain the boxes design 
+                      buildOTPBox(2),// and how it move from box to another in typing 
+                      buildOTPBox(3),
+                      buildOTPBox(4),
+                      buildOTPBox(5),
+                      buildOTPBox(6),
+                    ],
+                  ),
                 ),
               ),
 
@@ -246,8 +252,8 @@ class _OTP_PageState extends State<ReSetOTP> {
     return Padding(
       padding: const EdgeInsets.only(right: 3.0, left: 3.0),
       child: Container(
-        width: 70.0,
-        height: 70.0,
+        width: 48.0,
+        height: 48.0,
         decoration: BoxDecoration(
           border: Border.all(
             color: isAnyBoxEmpty 

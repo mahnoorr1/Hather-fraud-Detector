@@ -112,6 +112,7 @@ class REsetPageState extends State<REsetPage> {
 
   @override
   Widget build(BuildContext context) {
+    var materialLocalizations = MaterialLocalizations.of(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
@@ -190,6 +191,7 @@ class REsetPageState extends State<REsetPage> {
                         //bottom: 20.0,
                       ),
                       child: TextField(//
+                        key: Key('passwordTextField'),
                         controller: _passwordController,
                         // once the user start typing , will pass the enterd to _validatePassword 
                         onChanged: _validatePassword,
@@ -270,6 +272,7 @@ class REsetPageState extends State<REsetPage> {
                       // confermation password 
 
                       child: TextField(
+                        key: Key('confirmPasswordTextField'),
                         controller: _confirmPasswordController,
 
                         // once the user start typing , will pass the enterd to _validatePasswordConfirmation to check if match 
