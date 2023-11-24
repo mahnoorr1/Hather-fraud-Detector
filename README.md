@@ -1,16 +1,13 @@
-# hather
+# Hather
 
-A new Flutter project.
+A Fraudulant Message Detection Mobile Application to detect spam messages through a ML model and then reporting those messages.
 
-## Getting Started
+## Flutter Version and Packages Description
+- Flutter Version: 3.13.9 channel stable
+- Dart Version: 3.1.5
+- DevTools: 2.25.0
+- library used for Testing: flutter_test library (https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html)
+- Messages Listener: flutter_sms_listener (https://pub.dev/packages/flutter_sms_listener/versions/0.1.3) 
+## UI
+![image](https://github.com/mahnoorr1/Hather-fraud-Detector/assets/91974252/74ec0421-1870-4599-a223-acebf05267d6)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
